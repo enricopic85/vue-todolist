@@ -34,12 +34,8 @@ new Vue({
     addTodo:function(){
         const me = Object.create(this.todo);
         me.text = this.newText;
+        console.log(me.text)
         me.done = this.newDone; 
-        if (me.done==="fatto") {
-            me.done=true
-        } else{
-            me.done=false
-        }
         return me;
     }
 
