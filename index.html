@@ -13,9 +13,10 @@
 <body>
     <div id="app">
         <div class="container">
-            <div>
-                Aggiungi una nuova cosa da fare  <input type="text" v-model="newTodo" @keyup.enter="addTodo">
-                <button @click="addTodo">Aggiungi</button>
+            <div class="list">
+                <input type="text" v-model="newTodo" @keyup.enter="addTodo" placeholder="Nuovo Todo">
+                <!-- <button @click="addTodo">Aggiungi</button> -->
+                <div class="button">Aggiungi</div>
             </div>
             <div class="todo" v-for="(item,i) in todo" >
                 <p :class="[item.done ? 'text' : '']" @click="changeDone(item)">{{item.text}}</p>
