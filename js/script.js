@@ -23,22 +23,16 @@ new Vue({
                 done: false
             },
         ],
-        newText:'',
-        newDone:''
+       newTodo:''
     },
     methods:{
         removeItem:function(index){
             this.todo.splice(index,1);
         },
-        addText:function(){
-            me.text = this.newText;
-            return me;
-        },
-        addDone:function(){
-            const me = Object.create(this.todo);
-            me.done = this.newDone;
-            return me 
-        }
+        addTodo() {
+            this.todo.push({ text: this.newTodo, done: false });
+            this.newTodo = "";
+          },
     },
    
 
