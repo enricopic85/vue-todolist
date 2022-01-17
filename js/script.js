@@ -22,12 +22,25 @@ new Vue({
                 text:"non pensare a Berlusconi come prossimo presidente della Repubblica",
                 done: false
             },
-        ]
+        ],
+        newText:'',
+        newDone:''
     },
     methods:{
         removeItem:function(index){
             this.todo.splice(index,1);
         }
+    },
+    addTodo:function(){
+        const me = Object.create(this.todo);
+        me.text = this.newText;
+        me.done = this.newDone; 
+        if (me.done==="fatto") {
+            me.done=true
+        } else{
+            me.done=false
+        }
+        return me;
     }
 
 })
