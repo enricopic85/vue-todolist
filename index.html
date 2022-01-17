@@ -14,11 +14,11 @@
     <div id="app">
         <div class="container">
             <div>
-                Aggiungi una nuova cosa da fare  <input type="text" v-model="newTodo" >
+                Aggiungi una nuova cosa da fare  <input type="text" v-model="newTodo" @keyup.enter="addTodo">
                 <button @click="addTodo">Aggiungi</button>
             </div>
             <div class="todo" v-for="(item,i) in todo" >
-                <p :class="[item.done ? 'text' : '']">{{item.text}}</p>
+                <p :class="[item.done ? 'text' : '']" @click="changeDone(item)">{{item.text}}</p>
                 <i class="fas fa-times pointer" @click="removeItem(i)"></i>
             </div>
         </div>

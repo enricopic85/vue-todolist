@@ -33,6 +33,9 @@ new Vue({
             this.todo.push({ text: this.newTodo, done: false });
             this.newTodo = "";
           },
+        changeDone(i){
+            i.done =!i.done
+        }
     },
    
 
