@@ -15,11 +15,11 @@
         <div class="container">
             <div>
                 Aggiungi una nuova cosa da fare  <input type="text" v-model="newText" >
-                <button @click="addTodo">Aggiungi</button>
+                <button @click="addText">Aggiungi</button>
             </div>
             <div>
                 Aggiungi se è stata fatta o no  <input type="text"  placeholder="true/false" v-model="newDone">
-                <button @click="addTodo">Aggiungi</button>
+                <button @click="addDone">Aggiungi</button>
             </div>
             <div class="todo" v-for="(item,i) in todo" >
                 <p :class="[item.done ? 'text' : '']">{{item.text}}</p>

@@ -29,14 +29,17 @@ new Vue({
     methods:{
         removeItem:function(index){
             this.todo.splice(index,1);
+        },
+        addText:function(){
+            me.text = this.newText;
+            return me;
+        },
+        addDone:function(){
+            const me = Object.create(this.todo);
+            me.done = this.newDone;
+            return me 
         }
     },
-    addTodo:function(){
-        const me = Object.create(this.todo);
-        me.text = this.newText;
-        console.log(me.text)
-        me.done = this.newDone; 
-        return me;
-    }
+   
 
 })
