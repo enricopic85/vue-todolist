@@ -25,8 +25,8 @@ new Vue({
         ]
     },
     methods:{
-        todoFlag:function(){
-            this.done ? 'text' : ''
+        removeItem:function(index){
+            this.todo.splice(index,1);
         }
     }
 
